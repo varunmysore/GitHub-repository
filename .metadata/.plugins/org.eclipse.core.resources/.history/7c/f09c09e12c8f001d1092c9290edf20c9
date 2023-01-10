@@ -1,0 +1,13 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class B_Dashboard {
+@FindBy(className="oxd-main-menu-item-wrapper")
+private WebElement link_PIM;
+
+public void click_pim() {
+	this.link_PIM.click();
+}
+}

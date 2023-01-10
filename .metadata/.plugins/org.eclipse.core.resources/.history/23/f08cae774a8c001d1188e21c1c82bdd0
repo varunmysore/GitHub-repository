@@ -1,0 +1,62 @@
+package generic;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+public class Practice_actionUtil {
+	WebDriver driver;
+
+	public Practice_actionUtil(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public static String getData_mtd(String location, String sn, int r, int c) {
+
+		try {
+			FileInputStream f = new FileInputStream(location);
+			Workbook book = WorkbookFactory.create(f);
+			String d = book.getSheet(sn).getRow(r).getCell(c).getStringCellValue();
+			return d;
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+
+	public void validate_mtd(String title) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.titleIs(title));
+			System.out.println("pass: title matched");
+		} catch (TimeoutException e) {
+			System.out.println("fail: title not matched");
+			Assert.fail();
+		}
+
+	}
+
+	public void screenShot_mtd(String path) {
+
+		try {
+			TakesScreenshot t = (TakesScreenshot) driver;
+			File src = t.getScreenshotAs(OutputType.FILE);
+			File dest = new File(path);
+			FileUtils.copyFile(src, dest);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

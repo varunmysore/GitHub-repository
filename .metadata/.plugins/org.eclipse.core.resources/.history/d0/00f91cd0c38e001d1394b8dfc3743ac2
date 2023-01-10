@@ -1,0 +1,16 @@
+package script;
+
+import org.testng.annotations.Test;
+
+import generic.Basedata;
+import pompages.initiaizePage;
+
+public class Test1 extends Basedata {
+	@Test
+	public void loginTest() {
+		initiaizePage pages = new initiaizePage(driver);
+		pages.lp.enterloginDetails(p.getProperty("username"), "password");
+   
+	}
+
+}

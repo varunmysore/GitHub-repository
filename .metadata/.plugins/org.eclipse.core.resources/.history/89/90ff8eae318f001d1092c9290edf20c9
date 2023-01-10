@@ -1,0 +1,15 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class D_AddEmployee {
+@FindBy(name="firstName")
+private WebElement tb_firstname;
+
+@FindBy(name="middleName")
+private WebElement tb_middlename;
+
+@FindBy(name="lastName")
+private WebElement tb_lastname;
+}

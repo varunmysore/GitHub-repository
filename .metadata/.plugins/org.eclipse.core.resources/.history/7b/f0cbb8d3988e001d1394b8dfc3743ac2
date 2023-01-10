@@ -1,0 +1,14 @@
+package script;
+
+import org.testng.annotations.Test;
+
+import generic.Basedata;
+import generic.actionUtils;
+
+public class Test1 extends Basedata {
+	@Test
+	public void testmtd() {
+    actionUtils.getData(excelpath, "addUser", 1, 0);
+	}
+
+}

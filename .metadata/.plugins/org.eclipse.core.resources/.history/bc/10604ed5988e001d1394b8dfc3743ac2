@@ -1,0 +1,14 @@
+package generic;
+
+public class Basedata {
+	public static final String userDir=System.getProperty("user,Dir");
+	public static final String chromeKey = "webdriver.chrome.driver";
+	public static final String geckoKey = "webdriver.gecko.driver";
+	public static final String chromeValue = userDir+"\\drivers\\chromedriver.exe";
+	public static final String geckoValue = userDir+"\\drivers\\geckodriver.exe";
+	public static final String excelpath=userDir+"\\data\\actidata1.xlsx";;
+	
+}
+	 
+
+

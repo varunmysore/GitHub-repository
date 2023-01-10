@@ -1,0 +1,26 @@
+package generic;
+
+import java.io.FileInputStream;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.WebDriver;
+
+public class actionUtils {
+	WebDriver driver;
+
+	public actionUtils(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public static String getData(String location, String sn, int r, int c) {
+		try {
+			FileInputStream f = new FileInputStream(location);
+			Workbook book = WorkbookFactory.create(f);
+			String d = book.getSheet(sn).getRow(r).getCell(c).getStringCellValue();
+			return d;
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+}

@@ -1,0 +1,13 @@
+package dataproviders;
+
+import org.testng.annotations.DataProvider;
+
+public class DataFromXL {
+	@DataProvider
+	public void  data() {
+		Object[][] d=new Object[1][9];
+	
+	}
+	
+	
+}

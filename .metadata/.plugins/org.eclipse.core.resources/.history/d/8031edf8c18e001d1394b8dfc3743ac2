@@ -1,0 +1,28 @@
+package pompages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class login_page {
+@FindBy(id="Email")
+private WebElement email_tb;
+
+@FindBy(id="Password")
+private WebElement password_tb;
+
+@FindBy(className="button-1 login-button")
+private WebElement login_btn;
+
+public void enterEmail(String un) {
+	this.email_tb.sendKeys(un);
+}
+	
+	public void enterPassword(String pwd) {
+		this.password_tb.sendKeys(pwd);
+	}
+	
+	public void clickLogin() {
+		this.login_btn.click();
+	}
+}
+

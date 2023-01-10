@@ -1,0 +1,24 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class D_AddEmployee {
+@FindBy(name="firstName")
+private WebElement tb_firstname;
+
+@FindBy(name="middleName")
+private WebElement tb_middlename;
+
+@FindBy(name="lastName")
+private WebElement tb_lastname;
+
+@FindBy(className="oxd-switch-wrapper")
+private WebElement btn_createLogin;
+
+@FindBy(className="oxd-input oxd-input--active")
+private WebElement tb_username;
+
+@FindBy(xpath="//input[@class='oxd-input oxd-input--active'])[3]")
+private WebElement tb_password;
+}

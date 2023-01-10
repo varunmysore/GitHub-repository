@@ -1,0 +1,33 @@
+package script;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import generic.Basedata;
+import pompages.initiaizePage;
+
+public class Test1 extends Basedata {
+//	@Test
+//	public void loginTest() {
+//		System.out.println("test executed");
+//		initiaizePage pages = new initiaizePage(driver);
+//		pages.lp.enterloginDetails(p.getProperty("email"), p.getProperty("password"));
+//   
+	
+	@Test
+	public void login() {
+		driver.findElement(By.id("email")).sendKeys("varun90@gmail.com");
+		driver.findElement(By.id("password")).sendKeys("varun90");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+

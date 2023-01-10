@@ -1,0 +1,8 @@
+package generic;
+
+public class BaseClass {
+
+	public static final String userDir=System.getProperty("user.dir");
+	
+	
+}

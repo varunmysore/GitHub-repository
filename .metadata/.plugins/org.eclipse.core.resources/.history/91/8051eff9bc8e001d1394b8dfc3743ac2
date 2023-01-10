@@ -1,0 +1,15 @@
+package dataproviders;
+
+import org.testng.annotations.DataProvider;
+
+import generic.actionUtils;
+
+public class DataFromXL {
+	@DataProvider
+	public void  data() {
+		Object[][] d=new Object[1][9];
+	d[0][0]=actionUtils.getData("location", "actidata1", 1, 0);
+	}
+	
+	
+}

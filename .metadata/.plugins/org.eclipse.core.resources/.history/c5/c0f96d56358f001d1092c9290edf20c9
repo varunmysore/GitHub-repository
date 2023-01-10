@@ -1,0 +1,20 @@
+package scripts;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import pages.Z_InitialisePage;
+
+public class Test1 {
+	@Test
+	public void login_Test(WebDriver driver) {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Z_InitialisePage pages = new Z_InitialisePage(driver);
+		pages.login.login_mtd("admin", "password");
+
+	}
+
+}
